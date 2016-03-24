@@ -1,0 +1,31 @@
+
+<div class="webForm">
+    <div class="webContainer">
+        <div class="header">Sign Up For My Web App</div>
+        {{#data}}
+
+            {{#select}}
+                <select id="{{id}}" name="{{label}}">{{label}}
+                	<option value="" default selected>{{label}}...</option>
+                	{{#options}}
+                    <option value="{{value}}">{{label}}</option>
+                	{{/options}}
+                </select>
+            {{/select}}
+
+            {{#textarea}}
+                <i class="fa {{icon}}"></i>
+                <textarea id="{{id}}" placeholder="{{label}}"></textarea>
+            {{/textarea}}
+
+            {{^select}}{{^textarea}}
+                <i class="fa {{icon}}"></i>
+                <input class="{{icon}}" id="{{id}}" text="{{text}}" placeholder="{{label}}"></input>
+            {{/textarea}}{{/select}}
+
+        {{/data}}
+        <div class="foot">
+            <button>Submit Form</button>
+        </div>
+    </div>
+</div>
